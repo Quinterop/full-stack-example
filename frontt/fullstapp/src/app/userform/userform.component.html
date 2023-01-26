@@ -1,0 +1,29 @@
+<form>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter name"
+        [(ngModel)]="name" name="name1">
+    </div>
+    
+    <div class="form-group">
+        <label for="phone">First name</label>
+        <input type="text" class="form-control" id="phone" placeholder="Enter Fname"
+        [(ngModel)]="firstName" name="name2">
+    </div>
+    
+    <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email"
+        [(ngModel)]="email" name="mail">
+    </div>
+    
+    <div class="form-group">
+        <label for="type">Type</label>
+        <select class="form-control" id="type" name="typ" [(ngModel)]="selectedType.name"> 
+            <option *ngFor="let userType of userTypes" [value]="userType.name" >{{userType.name}}</option>       
+        </select>  
+    </div>
+    
+    
+    <button type="button" class="btn btn-primary" (click)="onSubmit()" [routerLink]="['/users']">Save</button>
+</form>

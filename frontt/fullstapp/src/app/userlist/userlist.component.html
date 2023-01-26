@@ -1,0 +1,24 @@
+<div class="list">
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.firstName}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.type?.name}}</td>
+            <td> <button (click)="edit(user)" class="bg-warning"  [routerLink]="['/userform']" [queryParams]="{id:user.id}">edit</button>    </td>
+            <td><button (click)="delete(user)" class="bg-danger">delete</button>    </td>
+        </tr>
+    </tbody>
+</table>
+</div> 

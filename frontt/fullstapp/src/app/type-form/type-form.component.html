@@ -1,0 +1,9 @@
+<form>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter name"
+         [(ngModel)]="name" name="name1">
+    </div>
+
+    <button type="button" class="btn btn-primary" (click)="onSubmit()" routerLink="/types">Save</button>
+</form>

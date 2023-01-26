@@ -1,5 +1,7 @@
 package com.asy.fullstacktest.dao;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -11,7 +13,8 @@ public interface UserDAO extends JpaRepository<User, Integer>{
     User findByEmail(String email);
     User findByName(String name);
     User findByFirstName(String firstName);
-    User findByType(UserType type);
+    List<User> findAllByType(UserType type);
+    User findByType(UserType userType);
 }
 
 

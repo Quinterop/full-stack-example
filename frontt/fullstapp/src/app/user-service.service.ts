@@ -62,6 +62,8 @@ export class UserServiceService {
     },
     (error) => {
       alert("Cannot delete type that is in use");
+      //reload page
+      window.location.reload();
     });
   }
   

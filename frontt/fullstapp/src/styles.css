@@ -1,72 +1,143 @@
-form{
-    border: 1px solid #890e54ff;
-    border-radius: 5px;
+form {
+    margin:auto;
+}
+.form-group {
+    margin:auto;
 }
 
-button{
-    background-color: #890e54ff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 5px;
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    padding: 0px;
 }
-
-header{
-    /* dispose like a navbar */
+nav {
     display: flex;
-    /* center */
+    align-items: center;
     justify-content: center;
-
     background-color: #80a9beff;
-    color: white;
-    padding: 5px;
-    margin: 5px;
+    height: 65px;
 }
 
-.tittlebar{
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #708090ff;
-    color: white;
-    padding: 5px;
-    margin: 5px;
+    margin-top: 65px;
+    width: 100%;
+    border:  14px solid #708090ff;
 }
 
-table{
-    border: 1px solid #890e54ff;
-    border-radius: 8px;
-}
-
-tr{
-    border: 1px solid #890e54ff;
-    border-radius: 8px;
-}
-
-td{
-    border: 5px solid #890e54ff;
+ul {
+    list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+li {
+    margin-right: 20px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    font-size: 30px;
+}
+
+a:hover {
+    background-color: #6c0e3aff;
+}
+
+a.active {
+    background-color: #6c0e3aff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin: 0 auto;
+    
+}
+
+.form-group {
+    margin: 15px 0;
+    width: 100%;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, select {
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    border: solid 3px #890e54ff;
+}
+
+input[type="email"] {
+    width: 100%;
    
 }
 
-a{
-    text-decoration: underline;
-    font-weight: bold;
-    color: black;
-}
-
-.list{
-    background-color: #708090ff;
+button {
+    background-color: #890e54ff;
     color: white;
-    padding: 5px;
-    margin: 5px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    width: 100%;
+}
+
+table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 1px solid #890e54ff;
+    font-size: larger;
+    font-weight: bold;
+
+}
+
+thead {
+    background-color: #890e54ff;
+    color: white;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+th {
+    text-align: left;
+}
+
+tr{
+    height: 30px;
+}
+
+td {
+    text-align: center;
+    height: 5px;
+}
+
+tbody{
+    background-color: #708090ff;
 }
 
 
-/* every component */
 *{
-   /* center */
-    margin: auto;
-    /* font */
-    font-family: 'Roboto', sans-serif;
-
+    font:  'Roboto', sans-serif;
 }

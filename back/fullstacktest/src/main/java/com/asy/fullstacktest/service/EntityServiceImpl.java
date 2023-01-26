@@ -130,12 +130,29 @@ public class EntityServiceImpl implements EntityService{
     @Override
     public void update(String name, UserType type) {
         UserType oldType = userTypeDAO.findByName(name);
-        UserType t = oldType;
-        t.setName(type.getName());
-        userTypeDAO.save(t);
-        
-        
+        UserType newType = new UserType();
+        newType.setDescription(type.getDescription());
+        newType.setName(type.getName());
+
+        userTypeDAO.save(newType);
+        List<User> users = userDAO.findAllByType(oldType);
+        for(User u : users) {
+            u.setType(newType);
+            userDAO.save(u);
+        }
+        userTypeDAO.delete(oldType);
     }
+
+    
+
+
+//To create a new record with the updated primary key and related data, you can follow these steps:
+
+// Create a new object with the updated primary key and related data.
+// Persist the new object to the database.
+// Retrieve all the related records of the old object.
+// Update the foreign key of the related records to point to the new object.
+// Delete the old object from the database.
     
 }
 

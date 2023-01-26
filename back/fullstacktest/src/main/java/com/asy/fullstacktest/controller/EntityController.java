@@ -75,13 +75,5 @@ public class EntityController {
     }
 }
 
-//this.Url+"deleteType/"+userType.name
+
 // TODO : FOR BEAN USAGE AND OTHER NEW SPRING STUFF
-
-//TODO To create a new record with the updated primary key and related data, you can follow these steps:
-
-// Create a new object with the updated primary key and related data.
-// Persist the new object to the database.
-// Retrieve all the related records of the old object.
-// Update the foreign key of the related records to point to the new object.
-// Delete the old object from the database.

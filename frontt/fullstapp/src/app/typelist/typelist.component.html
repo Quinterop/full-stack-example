@@ -1,17 +1,18 @@
+<div class="top">
+    <h1>User Type list</h1>
+</div>
 <div class="list">
     <table>
         <thead>
             <tr>
-                <th>name</th>
-                <th>description</th>
+                <th><a (click)="sort(true)">⮟</a>Name<a (click)="sort(false)">⮝</a></th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let userType of userTypes">
                 <td>{{userType.name}}</td>
-                <td>{{userType.description}}</td>
-                <td><button (click)="edit(userType)" class="bg-warning" [routerLink]="['/typeform']" [queryParams]="{type:userType.name}">edit</button></td>
-                <td><button (click)="delete(userType)" class="bg-danger">delete</button></td>
+                <td><button (click)="edit(userType)" class="bg-warning" [routerLink]="['/typeform']" [queryParams]="{type:userType.name}">Edit</button><button (click)="delete(userType)" class="bg-danger">Delete</button></td>
             </tr>
             
         </tbody>

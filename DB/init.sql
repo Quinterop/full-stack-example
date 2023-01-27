@@ -1,7 +1,6 @@
-DROP TABLE IF EXISTS users;
+
 DROP TABLE IF EXISTS userTypes;
 DROP TABLE IF EXISTS user_types;
-
 
 CREATE TABLE user_types (
     name VARCHAR(20) NOT NULL,

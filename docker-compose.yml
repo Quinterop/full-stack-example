@@ -1,0 +1,45 @@
+version: '3.1'
+services:
+  dbpostgresql:
+    image: "postgres:12"
+    container_name: dbpostgresql
+    networks:
+      - order-pgsql
+    ports:
+      - "5432:5432"
+    volumes: 
+      - /D:/forma/Final/fullstacktest/DB:/var/lib/postgresql/data
+      - /D:/forma/Final/fullstacktest/DB/init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      POSTGRES_DB: projetfullstack
+      POSTGRES_PASSWORD: kebab
+  app:
+    container_name: bendcontainer
+    image: springbackend
+    networks:
+      - order-pgsql
+    build: ./
+    ports:
+      - "8080:8080"
+    depends_on:
+      - dbpostgresql
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://dbpostgresql:5432/projetfullstack
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=kebab
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=create
+  angular-app:
+    container_name: angular-container
+    image: frontendangu
+    ports:
+      - "4200:4200"
+    networks:
+      - order-pgsql
+    environment:
+      - API_URL=http://app:8080
+    depends_on:
+      - app
+  
+
+networks:
+  order-pgsql:
